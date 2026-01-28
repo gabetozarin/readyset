@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-art: 'Syne', sans-serif;
+  
+  --color-background: hsl(0 0% 5%);
+  --color-foreground: hsl(0 0% 95%);
+  
+  --color-primary: hsl(14 100% 55%); /* Vibrant Orange/Red */
+  --color-primary-foreground: hsl(0 0% 100%);
+  
+  --color-secondary: hsl(0 0% 15%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+  
+  --color-muted: hsl(0 0% 20%);
+  --color-muted-foreground: hsl(0 0% 60%);
+  
+  --color-accent: hsl(14 100% 55%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  
+  --color-card: hsl(0 0% 8%);
+  --color-card-foreground: hsl(0 0% 95%);
+  --color-card-border: hsl(0 0% 15%);
+  
+  --color-border: hsl(0 0% 15%);
+  --color-input: hsl(0 0% 15%);
+  --color-ring: hsl(14 100% 55%);
+  
+  --radius: 0rem; /* Brutalist - no rounded corners */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-body antialiased bg-background text-foreground selection:bg-primary selection:text-white;
+    background-image: url('/assets/noise.png');
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wide uppercase;
+  }
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
+}
+
+.text-stroke-hover:hover {
+  -webkit-text-stroke: 0px;
+  color: currentColor;
+}
